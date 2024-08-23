@@ -14,7 +14,7 @@
 <ul>
 	{#each data.users as user}
 		<li id={user.id}>
-			{user.fullName}
+			{user.username}
 			<form action="?/delete" method="post" use:enhance>
 				<input type="hidden" name="id" value={user.id} />
 				<button>Delete</button>
@@ -22,8 +22,3 @@
 		</li>
 	{/each}
 </ul>
-
-<form method="post" action="?/create" use:enhance>
-	<input type="text" name="name" placeholder="name" />
-	<button>Submit</button>
-</form>

@@ -22,6 +22,41 @@
       "when": 1724397296404,
       "tag": "0002_swift_silver_surfer",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1724433099805,
+      "tag": "0003_lucky_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1724433943218,
+      "tag": "0004_naive_speed",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1724434070121,
+      "tag": "0005_familiar_cammi",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1724434493529,
+      "tag": "0006_married_joseph",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1724434518131,
+      "tag": "0007_tiresome_ogun",
+      "breakpoints": true
     }
   ]
 }

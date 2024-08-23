@@ -14,16 +14,6 @@ export const load = (async ({ request, platform, locals: { db } }) => {
 }) satisfies PageServerLoad
 
 export const actions = {
-	create: async ({ request, locals: { db } }) => {
-		const formData = await request.formData()
-		const name = formData.get('name')
-		if (!name) fail(400, { message: 'Please provide a name' })
-		await db
-			.insert(users)
-			.values({ fullName: name as string })
-			.execute()
-	},
-
 	delete: async ({ request, locals: { db } }) => {
 		const formData = await request.formData()
 		const id = formData.get('id')

@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"db": "wrangler d1 execute jun --local --file=./drizzle/0000_short_lockheed.sql",
-		"db:prod": "pnpm wrangler d1 execute jun --remote --file=drizzle/0001_sleepy_cyclops.sql",
+		"db:prod": "pnpm wrangler d1 execute jun --remote --file=drizzle/0007_tiresome_ogun.sql",
 		"gen": "drizzle-kit generate && wrangler d1 migrations apply jun",
 		"preview": "pnpm run build && wrangler pages dev",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -23,6 +23,7 @@
 		"@sveltejs/kit": "^2.5.24",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
 		"@types/eslint": "^9.6.0",
+		"@types/jsonwebtoken": "^9.0.6",
 		"drizzle-kit": "^0.24.1",
 		"eslint": "^9.9.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -40,6 +41,8 @@
 	"type": "module",
 	"dependencies": {
 		"drizzle-orm": "^0.33.0",
+		"google-auth-library": "^9.14.0",
+		"jsonwebtoken": "^9.0.2",
 		"nanoid": "^5.0.7"
 	}
 }

@@ -18,7 +18,7 @@ export const actions = {
 		const formData = await request.formData()
 		const name = formData.get('name')
 		if (!name) fail(400, { message: 'Please provide a name' })
-		const r = await db
+		await db
 			.insert(users)
 			.values({ fullName: name as string })
 			.execute()
@@ -28,7 +28,7 @@ export const actions = {
 		const formData = await request.formData()
 		const id = formData.get('id')
 		if (!id) fail(400, { message: 'Please provide an id' })
-		const r = await db
+		await db
 			.delete(users)
 			.where(eq(users.id, id as string))
 			.execute()

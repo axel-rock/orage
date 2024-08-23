@@ -15,7 +15,7 @@
 	{#each data.users as user}
 		<li id={user.id}>
 			{user.fullName}
-			<form action="?/delete" method="post">
+			<form action="?/delete" method="post" use:enhance>
 				<input type="hidden" name="id" value={user.id} />
 				<button>Delete</button>
 			</form>

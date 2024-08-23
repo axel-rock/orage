@@ -1,18 +1,19 @@
 {
 	"name": "jun",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"db": "wrangler d1 execute jun --local --file=./drizzle/0000_short_lockheed.sql",
+		"db:prod": "pnpm wrangler d1 execute jun --remote --file=drizzle/0001_sleepy_cyclops.sql",
 		"gen": "drizzle-kit generate && wrangler d1 migrations apply jun",
 		"preview": "pnpm run build && wrangler pages dev",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"deploy": "pnpm run build && wrangler pages deploy",
+		"deploy": "pnpm run build && wrangler d1 execute jun --remote && wrangler pages deploy",
 		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
@@ -38,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"drizzle-orm": "^0.33.0"
+		"drizzle-orm": "^0.33.0",
+		"nanoid": "^5.0.7"
 	}
 }

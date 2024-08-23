@@ -1,8 +1,8 @@
-import { sql } from "drizzle-orm";
-import { text, integer, sqliteTable } from "drizzle-orm/sqlite-core";
+import { text, integer, sqliteTable } from 'drizzle-orm/sqlite-core'
+import { nanoid } from 'nanoid'
 
 export const users = sqliteTable('users', {
-  id: integer('id').primaryKey(),
-  fullName: text('full_name'),
-  phone: text('phone'),
-});
+	id: text('id').$default(() => nanoid()),
+	fullName: text('full_name'),
+	phone: text('phone'),
+})

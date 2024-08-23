@@ -15,6 +15,13 @@
       "when": 1724393209230,
       "tag": "0001_sleepy_cyclops",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1724397296404,
+      "tag": "0002_swift_silver_surfer",
+      "breakpoints": true
     }
   ]
 }

@@ -1,43 +1,43 @@
 {
-  "name": "jun",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "db": "wrangler d1 execute jun --local --file=./drizzle/0000_short_lockheed.sql",
-    "gen": "drizzle-kit generate && wrangler d1 migrations apply jun",
-    "preview": "pnpm run build && wrangler pages dev",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
-    "format": "prettier --write .",
-    "deploy": "pnpm run build && wrangler pages deploy",
-    "cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240821.1",
-    "@sveltejs/adapter-auto": "^3.2.4",
-    "@sveltejs/adapter-cloudflare": "^4.7.2",
-    "@sveltejs/kit": "^2.5.24",
-    "@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
-    "@types/eslint": "^9.6.0",
-    "drizzle-kit": "^0.24.1",
-    "eslint": "^9.9.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.43.0",
-    "globals": "^15.9.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.6",
-    "svelte": "5.0.0-next.235",
-    "svelte-check": "^3.8.6",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.2.0",
-    "vite": "^5.4.2",
-    "wrangler": "^3.72.2"
-  },
-  "type": "module",
-  "dependencies": {
-    "drizzle-orm": "^0.33.0"
-  }
+	"name": "jun",
+	"version": "0.0.2",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"db": "wrangler d1 execute jun --local --file=./drizzle/0000_short_lockheed.sql",
+		"gen": "drizzle-kit generate && wrangler d1 migrations apply jun",
+		"preview": "pnpm run build && wrangler pages dev",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"deploy": "pnpm run build && wrangler pages deploy",
+		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240821.1",
+		"@sveltejs/adapter-auto": "^3.2.4",
+		"@sveltejs/adapter-cloudflare": "^4.7.2",
+		"@sveltejs/kit": "^2.5.24",
+		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
+		"@types/eslint": "^9.6.0",
+		"drizzle-kit": "^0.24.1",
+		"eslint": "^9.9.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.43.0",
+		"globals": "^15.9.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-svelte": "^3.2.6",
+		"svelte": "5.0.0-next.235",
+		"svelte-check": "^3.8.6",
+		"typescript": "^5.5.4",
+		"typescript-eslint": "^8.2.0",
+		"vite": "^5.4.2",
+		"wrangler": "^3.72.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"drizzle-orm": "^0.33.0"
+	}
 }

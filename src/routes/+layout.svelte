@@ -5,8 +5,6 @@
 
 	export let data: LayoutData
 
-	console.log(data)
-
 	const { user } = data
 
 	setContext('user', user)
@@ -15,7 +13,7 @@
 </script>
 
 <header>
-	<h1>Jun</h1>
+	<h1><a href="/">Orage</a></h1>
 
 	<nav>
 		<a href="/">Home</a>

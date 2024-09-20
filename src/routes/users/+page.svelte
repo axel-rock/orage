@@ -14,7 +14,10 @@
 <ul>
 	{#each data.users as user}
 		<li id={user.id}>
-			{user.username}
+			<details>
+				<summary>{user.username ?? user.email}</summary>
+				<pre>{JSON.stringify(user, null, 2)}</pre>
+			</details>
 			<form action="?/delete" method="post" use:enhance>
 				<input type="hidden" name="id" value={user.id} />
 				<button>Delete</button>

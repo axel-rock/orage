@@ -10,11 +10,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	const token = event.cookies.get('token')
 
-	console.log(token)
-
 	if (token) {
 		const user = jwt.verify(token, PRIVATE_JWT_KEY) as { email: string }
-		console.log(user)
 		if (user.email)
 			event.locals.user = (
 				await event.locals.db.select().from(users).where(eq(users.email, user.email))

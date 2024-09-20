@@ -1,7 +1,7 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "jun"
+name = "orage"
 compatibility_date = "2024-08-21"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat_v2"]
 pages_build_output_dir = ".svelte-kit/cloudflare"
 
 # Automatically place your workloads in an optimal location to minimize latency.
@@ -28,8 +28,8 @@ pages_build_output_dir = ".svelte-kit/cloudflare"
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#d1-databases
 [[d1_databases]]
 binding = "DB"
-database_name = "jun"
-database_id = "3676f180-3bcb-4b4e-9d0c-c16a3c9357c3"
+database_name = "orage"
+database_id = "d6663432-7d46-4e2a-8628-53b19c94b540"
 migrations_dir = "drizzle"                           # this is the line to change
 
 # Bind a Durable Object. Durable objects are a scale-to-zero compute primitive based on the actor model.

@@ -6,7 +6,7 @@ import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public'
 import { messages, users } from '$lib/server/schema'
 import { fail, redirect, type Actions } from '@sveltejs/kit'
 import { eq } from 'drizzle-orm'
-import { OAuth2Client } from 'google-auth-library'
+// import { OAuth2Client } from 'google-auth-library'
 
 export const load = (async ({ locals: { db } }) => {
 	return {
@@ -16,21 +16,20 @@ export const load = (async ({ locals: { db } }) => {
 
 export const actions = {
 	login: async ({ request, url }) => {
-		const client = new OAuth2Client(
-			PUBLIC_GOOGLE_CLIENT_ID,
-			PRIVATE_GOOGLE_CLIENT,
-			url.origin + '/api/oauth'
-		)
-
-		redirect(
-			302,
-			client.generateAuthUrl({
-				access_type: 'offline',
-				scope:
-					'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid',
-				consent: 'prompt',
-			})
-		)
+		// const client = new OAuth2Client(
+		// 	PUBLIC_GOOGLE_CLIENT_ID,
+		// 	PRIVATE_GOOGLE_CLIENT,
+		// 	url.origin + '/api/oauth'
+		// )
+		// redirect(
+		// 	302,
+		// 	client.generateAuthUrl({
+		// 		access_type: 'offline',
+		// 		scope:
+		// 			'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid',
+		// 		consent: 'prompt',
+		// 	})
+		// )
 	},
 
 	logout: async ({ cookies }) => {

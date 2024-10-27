@@ -1,12 +1,20 @@
 import { PRIVATE_JWT_KEY } from '$env/static/private'
 import { users } from '$lib/server/schema'
 import type { Handle } from '@sveltejs/kit'
+import { sequence } from '@sveltejs/kit/hooks'
 import { eq } from 'drizzle-orm'
 import { drizzle } from 'drizzle-orm/d1'
+import { handle as authHandle } from '$lib/auth'
 // import jwt from 'jsonwebtoken'
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const dbHandle: Handle = async ({ event, resolve }) => {
 	if (event.platform) event.locals.db = drizzle(event.platform.env.DB)
+
+	if (event.locals.auth) {
+		const session = await event.locals.auth()
+		// @ts-expect-error
+		if (session?.user) event.locals.user = session.user
+	}
 
 	// const token = event.cookies.get('token')
 
@@ -21,3 +29,5 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const response = await resolve(event)
 	return response
 }
+
+export const handle: Handle = sequence(authHandle, dbHandle)

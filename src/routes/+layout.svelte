@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms'
 	import { setContext } from 'svelte'
 	import type { LayoutData } from './$types'
+	import { signIn, signOut } from '@auth/sveltekit/client'
 
 	import '/src/css/style.css'
 	interface Props {
@@ -21,13 +22,23 @@
 		<a href="/" role="button">Home</a>
 		<a href="/users" role="button">Users</a>
 		{#if user}
-			<form action="/?/logout" method="POST">
+			<!-- <form action="/?/logout" method="POST">
 				<button type="submit">Logout ({user.email})</button>
-			</form>
+				</form> -->
+			<button
+				onclick={() => {
+					signOut()
+				}}>Logout ({user.email})</button
+			>
 		{:else}
-			<form action="/?/login" method="POST" use:enhance>
+			<!-- <form action="/?/login" method="POST" use:enhance>
 				<button type="submit">Login</button>
-			</form>
+			</form> -->
+			<button
+				onclick={() => {
+					signIn()
+				}}>Login</button
+			>
 		{/if}
 	</nav>
 </header>

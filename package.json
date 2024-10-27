@@ -39,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/sveltekit": "^1.7.2",
 		"drizzle-orm": "^0.33.0",
 		"nanoid": "^5.0.7"
 	}

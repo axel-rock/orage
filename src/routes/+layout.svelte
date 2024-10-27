@@ -1,17 +1,13 @@
 <script lang="ts">
-	import { enhance } from '$app/forms'
-	import { setContext } from 'svelte'
+	import '/src/css/style.css'
 	import type { LayoutData } from './$types'
 
-	import '/src/css/style.css'
 	interface Props {
 		data: LayoutData
 		children?: import('svelte').Snippet
 	}
 
 	let { data, children }: Props = $props()
-	const { user } = data
-	setContext('user', user)
 </script>
 
 <header>
@@ -19,16 +15,6 @@
 
 	<nav>
 		<a href="/" role="button">Home</a>
-		<a href="/users" role="button">Users</a>
-		{#if user}
-			<form action="/?/logout" method="POST">
-				<button type="submit">Logout ({user.email})</button>
-			</form>
-		{:else}
-			<form action="/?/login" method="POST" use:enhance>
-				<button type="submit">Login</button>
-			</form>
-		{/if}
 	</nav>
 </header>
 

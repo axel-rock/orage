@@ -7,12 +7,32 @@
 <h1>Welcome</h1>
 
 {#each data.messages as message}
-	<p>{message.message}</p>
+	<div class="message">
+		<div>{message.message}</div>
+		<form action="?/delete" method="post" use:enhance>
+			<input type="hidden" name="id" value={message.id} />
+			<button>✗</button>
+		</form>
+	</div>
 {/each}
 
-{#if data.user}
-	<form action="?/post" method="post" use:enhance>
-		<label for="message">Message</label>
-		<input type="text" name="message" id="message" />
-	</form>
-{/if}
+<form action="?/post" method="post" use:enhance>
+	<label for="message">Message</label>
+	<input type="text" name="message" id="message" />
+</form>
+
+<style>
+	.message {
+		position: relative;
+		background-color: var(--grey-100);
+		padding: 0.5rem;
+		min-height: 2.5rem;
+		display: flex;
+
+		& > form {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+</style>

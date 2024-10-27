@@ -1,0 +1,124 @@
+/* Buttons */
+:is(button, [role='button'], input[type='submit'], input[type='reset'], .button, label, .label) {
+	--border-radius: 0;
+	align-items: center;
+	color: var(--grey-700);
+	background-color: transparent;
+	appearance: none;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	gap: 0.5rem;
+	text-decoration: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	outline-color: color-mix(in oklab, var(--brand) 90%, transparent);
+
+	&:not(label, .label) {
+		height: 2.5rem;
+		padding-inline: 1rem;
+		border-radius: var(--border-radius);
+
+		overflow: hidden;
+		&:hover {
+			background-color: color-mix(in oklab, transparent 95%, currentcolor);
+		}
+	}
+
+	&.medium {
+		padding: 6px 0.75rem;
+	}
+
+	&.small {
+		padding: 5px 8px;
+		font-size: 0.75rem;
+		height: 1.75rem;
+	}
+
+	&:is(.primary, .secondary) {
+		box-shadow: var(--shadow-1);
+	}
+
+	&[aria-disabled='true'],
+	&[disabled] {
+		color: var(--grey-500);
+		box-shadow: none;
+		& > svg > path {
+			fill: var(--grey-500);
+		}
+	}
+
+	&:is([aria-disabled='true'], [disabled]):not(.tertiary) {
+		border: 1px solid var(--grey-100);
+	}
+
+	&.primary {
+		/* background: var(--brand); */
+		background: #d3420d;
+		color: var(--brand-contrast);
+		box-shadow:
+			0px 1px 1px 0px color-mix(in oklab, var(--grey-0) 6%, transparent),
+			0px 0px 0px 1px color-mix(in oklab, var(--grey-0) 8%, transparent) inset,
+			0px 2px 0px 0px rgba(255, 255, 255, 0.2) inset;
+	}
+	&.primary:is(:hover, .active) {
+		background: color-mix(in oklab, var(--brand) 90%, transparent);
+	}
+	&.primary:is([aria-disabled='true'], [disabled]) {
+		background: var(--brand);
+	}
+	&.primary > svg > path {
+		fill: var(--grey-0);
+	}
+
+	&.secondary {
+		color: var(--grey-700);
+		background: var(--grey-0);
+		transition: all 0.1s ease;
+		box-shadow: var(--shadow-2);
+	}
+	&.secondary:is(:hover, .active) {
+		background: var(--grey-0);
+		box-shadow: var(--shadow-1);
+		/* box-shadow: 0px 0px 0px 1px color-mix(in oklab, var(--grey-0) 60%, transparent) inset; */
+	}
+
+	&.tertiary {
+		color: var(--grey-700);
+		background: var(--grey-50);
+	}
+	&.tertiary:is(:hover, .active) {
+		/* background: var(--grey-50); */
+		box-shadow: 0px 0px 0px 1px color-mix(in oklab, var(--grey-0) 6%, transparent) inset;
+	}
+
+	&.danger {
+		color: var(--red);
+		/* background-color: color-mix(in oklab, var(--red) 5%, transparent); */
+	}
+
+	&.icon {
+		aspect-ratio: 1;
+		justify-content: center;
+		border-radius: 50%;
+		padding: unset;
+	}
+
+	&.active {
+		color: var(--brand);
+		background-color: color-mix(in oklab, var(--brand) 5%, transparent);
+
+		&:is(:hover, :focus) {
+			background-color: color-mix(in oklab, var(--brand) 10%, transparent);
+
+			&:focus {
+				border: solid 1px var(--brand);
+			}
+		}
+	}
+}

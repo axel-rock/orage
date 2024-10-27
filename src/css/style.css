@@ -1,9 +1,71 @@
-@font-face {
-	font-family: 'Inter';
-	src: url('/fonts/Inter/Inter.var.woff2') format('woff2-variations');
-	font-weight: 1 999;
-}
+@import './reset.css';
+@import './layout.css';
+@import './wrapper.css';
+@import './colors.css';
+@import './typography.css';
+@import './document.css';
+@import './form.css';
+@import './button.css';
 
 :root {
-	font-family: 'Inter', system-ui, sans-serif;
+	/* Colors */
+	--brand: #f15a22;
+	--brand-contrast: #fff;
+	--transition: 0.2s ease-out;
+
+	background-color: var(--grey-50);
+	color: var(--grey-600);
+
+	color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+b {
+	color: var(--grey-950, #121211);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.25rem; /* 142.857% */
+	letter-spacing: -0.09px;
+}
+
+summary {
+	& > * {
+		display: inline;
+	}
+}
+
+.badge {
+	border: solid 1px currentColor;
+	border-radius: 1rem;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 500;
+	/* no line breaks */
+	white-space: nowrap;
+}
+
+[popover]:popover-open {
+	translate: 0 0;
+}
+
+[popover] {
+	transition: translate 0.175s allow-discrete;
+	transition-timing-function: ease-out;
+	translate: 100vw 0;
+}
+
+@starting-style {
+	[popover]:popover-open {
+		translate: 100vw 0;
+	}
 }

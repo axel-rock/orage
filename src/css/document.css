@@ -1,0 +1,81 @@
+[role='document'] {
+	font-size: 1.5rem;
+	line-height: 1.33341;
+	font-weight: 600;
+
+	& > * {
+		width: min(calc(100% - 4rem), 62rem);
+		margin: 0 auto;
+	}
+
+	& .hero {
+		text-align: center;
+		margin-top: 4.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 1.75rem;
+
+		& h1 {
+			font-size: 2rem;
+		}
+
+		& h2 {
+			font-size: min(4.5rem, 10vw);
+			line-height: 1.05556;
+			font-weight: 600;
+			letter-spacing: -0.012em;
+		}
+
+		& p,
+		& a {
+			max-width: 28em;
+			color: var(--grey-900);
+			line-height: 1.28583;
+			font-weight: 400;
+			letter-spacing: 0.007em;
+			font-size: inherit;
+		}
+
+		& p {
+			margin: 4.5rem auto 1rem;
+			text-wrap: balance;
+		}
+	}
+
+	& section {
+		padding-top: 4.5rem;
+		margin-bottom: 4.5rem;
+	}
+
+	& a {
+		color: var(--brand) !important;
+
+		&:not(:hover) {
+			text-decoration: none;
+		}
+	}
+
+	& h2,
+	& h2 + h3 {
+		font-size: min(4rem, 10vw);
+		line-height: 1.0625;
+		font-weight: 600;
+		letter-spacing: -0.009em;
+	}
+
+	& h2:has(+ h3) {
+		font-size: 1.75rem;
+		line-height: 1.14286;
+		font-weight: 600;
+		letter-spacing: 0.007em;
+	}
+
+	& p {
+		font-size: 24px;
+		line-height: 1.33341;
+		font-weight: 500;
+		letter-spacing: 0.009em;
+		color: var(--grey-400);
+	}
+}

@@ -1,0 +1,47 @@
+:root {
+	--grey-0: hsl(0, 0%, 100%);
+	--grey-50: hsl(0, 0%, 98%);
+	--grey-100: hsl(0, 0%, 92%);
+	--grey-200: hsl(0, 0%, 80%);
+	--grey-300: hsl(0, 0%, 70%);
+	--grey-400: hsl(0, 0%, 60%);
+	--grey-500: hsl(0, 0%, 50%);
+	--grey-600: hsl(0, 0%, 40%);
+	--grey-700: hsl(0, 0%, 30%);
+	--grey-800: hsl(0, 0%, 20%);
+	--grey-900: hsl(0, 0%, 10%);
+	--grey-950: hsl(0, 0%, 0%);
+
+	color-scheme: light dark;
+
+	--purple: #a855f7;
+	--fuchsia: #d946ef;
+	--pink: #ec4899;
+	--violet: #8b5cf6;
+	--blue: #3b82f6;
+	--yellow: #f5a623;
+	--orange: #f35535;
+	--cyan: #06b6d4;
+	--teal: #14b8a6;
+	--red: #f43f5e;
+	--green: #4ac41e;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--grey-0: #000;
+		--grey-50: hsl(0, 0%, 4%);
+		--grey-100: hsl(0, 0%, 8%);
+		--grey-200: hsl(0, 0%, 15%);
+		--grey-300: hsl(0, 0%, 30%);
+		--grey-400: hsl(0, 0%, 40%);
+		--grey-500: hsl(0, 0%, 50%);
+		--grey-600: hsl(0, 0%, 60%);
+		--grey-700: hsl(0, 0%, 70%);
+		--grey-800: hsl(0, 0%, 80%);
+		--grey-900: hsl(0, 0%, 90%);
+		--grey-950: hsl(0, 0%, 100%);
+		--yellow: #ffc710;
+	}
+}

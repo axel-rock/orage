@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"db": "wrangler d1 execute orage --local --file=./drizzle/0000_short_lockheed.sql",
-		"db:prod": "pnpm wrangler d1 execute orage --remote --file=drizzle/0007_tiresome_ogun.sql",
+		"db:prod": "pnpm wrangler d1 execute orage --remote --file=drizzle/0000_gorgeous_vector.sql",
 		"gen": "drizzle-kit generate && wrangler d1 migrations apply orage",
 		"preview": "pnpm run build && wrangler pages dev",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

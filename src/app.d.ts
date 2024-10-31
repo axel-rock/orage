@@ -16,6 +16,7 @@ declare global {
 		interface Platform {
 			env: {
 				DB: D1Database
+				TEST_WORKFLOW: Workflow
 			}
 			context: {
 				waitUntil(promise: Promise<any>): void
